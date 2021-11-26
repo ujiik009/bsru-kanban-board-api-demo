@@ -5,7 +5,7 @@ Content-Type: application/json
 
 {
     "email": "example@hotmail.com",
-    "password": "Ikool009?"
+    "password": "123456"
 }
 
 ###
@@ -16,7 +16,7 @@ POST {{endpoint}}/api_kanban_board/service/authentication/register.php
 Content-Type: application/json
 
 {
-    "email": "example1@hotmail.com",
+    "email": "example@hotmail.com",
     "password": "123456",
     "full_name":"jason bourne",
     "phone":"0955648547",

@@ -1,0 +1,57 @@
+@endpoint = http://localhost
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoiZjZkZjM3ZjUtNGYwMC0xMWVjLTk3ZmQtYjQyZTk5ZWI1ODg3IiwiZW1haWwiOiJleGFtcGxlQGhvdG1haWwuY29tIiwiZnVsbF9uYW1lIjoiamFzb24gYm91cm5lIiwicGhvbmUiOiIwOTU1NjQ4NTQ3IiwicG9zaXRpb24iOiJCYWNrZW5kIERldmVsb3BlIiwiYmlvIjoibm90IHRoaW5nIHRvIHNheSJ9LCJkYXRlX3RpbWUiOiIyMDIxLTExLTI2IDIyOjM3OjAyIn0.JXI_ZLdW7vd-TdQzScXG8R5pUHGxoT3HrXvr2ImzicM
+@project_id = 12ae4ee5-4f01-11ec-97fd-b42e99eb5887
+// List of project
+GET {{endpoint}}/api_kanban_board/service/projects/list_project.php
+Content-Type: application/json
+authorization:{{token}}
+
+###
+
+// Create Project
+POST {{endpoint}}/api_kanban_board/service/projects/create_project.php
+Content-Type: application/json
+authorization:{{token}}
+
+{
+    "name":"BSRU App",
+    "description":"Project make BSRU app with java Day 2",
+    "start_date":"2020-01-01",
+    "end_date":"2021-12-31"
+}
+
+###
+
+// Update Project by project id
+PUT {{endpoint}}/api_kanban_board/service/projects/update_project.php
+Content-Type: application/json
+authorization:{{token}}
+
+{
+    "id":"{{project_id}}",
+    "name":"BSRU App SS2",
+    "description":"Project make BSRU app with java Day 2",
+    "start_date":"2020-01-01",
+    "end_date":"2021-12-31"
+}
+
+###
+// Delete Project by project id
+DELETE  {{endpoint}}/api_kanban_board/service/projects/delete_project.php?id={{project_id}}
+Content-Type: application/json
+authorization:{{token}}
+
+###
+// Invite user to project
+POST {{endpoint}}/api_kanban_board/service/projects/invite_user.php
+Content-Type: application/json
+authorization:{{token}}
+
+{
+    "id":"{{project_id}}",
+    "email_array":[
+        "example2@hotmail.com",
+        "example1@hotmail.com",
+        "example9@hotmail.com"
+    ]
+}
