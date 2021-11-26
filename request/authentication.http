@@ -1,0 +1,25 @@
+@endpoint = http://localhost
+// Login API
+POST {{endpoint}}/api_kanban_board/service/authentication/login.php
+Content-Type: application/json
+
+{
+    "email": "example@hotmail.com",
+    "password": "Ikool009?"
+}
+
+###
+
+// Register API
+
+POST {{endpoint}}/api_kanban_board/service/authentication/register.php
+Content-Type: application/json
+
+{
+    "email": "example1@hotmail.com",
+    "password": "123456",
+    "full_name":"jason bourne",
+    "phone":"0955648547",
+    "position":"Backend Develope",
+    "bio":"not thing to say"
+}
