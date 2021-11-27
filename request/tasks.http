@@ -1,0 +1,49 @@
+@endpoint = http://localhost
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoiZjZkZjM3ZjUtNGYwMC0xMWVjLTk3ZmQtYjQyZTk5ZWI1ODg3IiwiZW1haWwiOiJleGFtcGxlQGhvdG1haWwuY29tIiwiZnVsbF9uYW1lIjoiamFzb24gYm91cm5lIiwicGhvbmUiOiIwOTU1NjQ4NTQ3IiwicG9zaXRpb24iOiJCYWNrZW5kIERldmVsb3BlIiwiYmlvIjoibm90IHRoaW5nIHRvIHNheSJ9LCJkYXRlX3RpbWUiOiIyMDIxLTExLTI2IDIyOjM3OjAyIn0.JXI_ZLdW7vd-TdQzScXG8R5pUHGxoT3HrXvr2ImzicM
+@project_id = 645699ec-4f31-11ec-9e35-b42e99eb5887
+@task_id = 060085ac-4f40-11ec-9e35-b42e99eb5887
+
+// Get task by project id
+GET {{endpoint}}/api_kanban_board/service/tasks/task_list.php?project_id={{project_id}}
+Content-Type: application/json
+authorization:{{token}}
+
+###
+
+// Create Task
+POST {{endpoint}}/api_kanban_board/service/tasks/create_task.php?project_id={{project_id}}
+Content-Type: application/json
+authorization:{{token}}
+
+{
+    "name":"Design Database 2",
+    "description":"Design and install Database on development environment server",
+    "state":"todo",
+    "assign_to":"f6df37f5-4f00-11ec-97fd-b42e99eb5887",
+    "color":"#FFFDC2",
+    "due_date":"2021-12-31"
+}
+
+###
+
+// Update task
+PUT {{endpoint}}/api_kanban_board/service/tasks/update_task.php
+Content-Type: application/json
+authorization:{{token}}
+
+{
+    "id":"060085ac-4f40-11ec-9e35-b42e99eb5887",
+    "name":"Design Database 2",
+    "description":"Design and install Database on development environment server",
+    "state":"todo",
+    "assign_to":"f6df37f5-4f00-11ec-97fd-b42e99eb5887",
+    "color":"#FFFDC2",
+    "due_date":"2021-12-31"
+}
+
+###
+
+// Delete Project
+DELETE {{endpoint}}/api_kanban_board/service/tasks/delete_task.php?id={{task_id}}
+Content-Type: application/json
+authorization:{{token}}
