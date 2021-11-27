@@ -1,0 +1,30 @@
+
+@endpoint = http://localhost
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoiZjZkZjM3ZjUtNGYwMC0xMWVjLTk3ZmQtYjQyZTk5ZWI1ODg3IiwiZW1haWwiOiJleGFtcGxlQGhvdG1haWwuY29tIiwiZnVsbF9uYW1lIjoiamFzb24gYm91cm5lIiwicGhvbmUiOiIwOTU1NjQ4NTQ3IiwicG9zaXRpb24iOiJCYWNrZW5kIERldmVsb3BlIiwiYmlvIjoibm90IHRoaW5nIHRvIHNheSJ9LCJkYXRlX3RpbWUiOiIyMDIxLTExLTI2IDIyOjM3OjAyIn0.JXI_ZLdW7vd-TdQzScXG8R5pUHGxoT3HrXvr2ImzicM
+
+
+// Update Profile
+
+PUT {{endpoint}}/api_kanban_board/service/profile/update_profile.php
+Content-Type: application/json
+authorization:{{token}}
+
+{
+    "id": "f6df37f5-4f00-11ec-97fd-b42e99eb5887",
+    "email": "example@hotmail.com",
+    "full_name": "Apirat Premchana",
+    "phone": "0955648547",
+    "position": "Backend Develope",
+    "bio": "not thing to say"
+}
+
+###
+
+//Update Password
+PUT {{endpoint}}/api_kanban_board/service/profile/change_password.php
+Content-Type: application/json
+authorization:{{token}}
+
+{
+    "new_password":"1122334455"
+}
