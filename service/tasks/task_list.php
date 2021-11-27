@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                         $sql_assign_to = "SELECT id,email,full_name,phone,position,bio FROM `users` WHERE id = '{$row['assign_to']}';";
 
                         $result_assign_to = mysqli_query($database->getConnection(), $sql_assign_to);
-                        $row["assign_to"] = mysqli_fetch_assoc($result_assign_to);
+                        $row["user_assign"] = mysqli_fetch_assoc($result_assign_to);
                         $rows[] = $row;
                     }
                     $return["status"] = true;
