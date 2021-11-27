@@ -50,7 +50,7 @@ authorization:{{token}}
 {
     "id":"{{project_id}}",
     "email_array":[
-        "example2@hotmail.com",
+        "example@hotmail.com",
         "example1@hotmail.com",
         "example9@hotmail.com"
     ]

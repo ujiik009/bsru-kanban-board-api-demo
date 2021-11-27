@@ -1,0 +1,16 @@
+@endpoint = http://localhost
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoiZjZkZjM3ZjUtNGYwMC0xMWVjLTk3ZmQtYjQyZTk5ZWI1ODg3IiwiZW1haWwiOiJleGFtcGxlQGhvdG1haWwuY29tIiwiZnVsbF9uYW1lIjoiamFzb24gYm91cm5lIiwicGhvbmUiOiIwOTU1NjQ4NTQ3IiwicG9zaXRpb24iOiJCYWNrZW5kIERldmVsb3BlIiwiYmlvIjoibm90IHRoaW5nIHRvIHNheSJ9LCJkYXRlX3RpbWUiOiIyMDIxLTExLTI2IDIyOjM3OjAyIn0.JXI_ZLdW7vd-TdQzScXG8R5pUHGxoT3HrXvr2ImzicM
+@project_id = 645699ec-4f31-11ec-9e35-b42e99eb5887
+
+@project_user_id = 86c08fbc-4f44-11ec-b433-b42e99eb5887
+// List of member by project
+GET {{endpoint}}/api_kanban_board/service/members/list_member.php?project_id={{project_id}}
+Content-Type: application/json
+authorization:{{token}}
+
+###
+
+// Remove member by id
+DELETE  {{endpoint}}/api_kanban_board/service/members/remove_member.php?id={{project_user_id}}
+Content-Type: application/json
+authorization:{{token}}
