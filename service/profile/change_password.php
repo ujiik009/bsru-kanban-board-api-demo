@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "PUT") {
         $token = $headers['authorization'];
         try {
             if ($user = decode_jwt($token)) {
-                
+
                 $database = new Database();
                 //receive JSON POST
                 $json = file_get_contents('php://input');
@@ -54,7 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "PUT") {
         $return["message"] = "Token Not Found";
     }
 } else {
-    $return["status"] = "Method not allow";
+    $return["status"] = false;
+    $return["message"] = "Method not allow";
 }
 
 echo json_encode($return);

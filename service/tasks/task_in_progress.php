@@ -7,12 +7,14 @@ include __DIR__ . "/../../helper/cors.php";
 cors();
 $return = array();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $headers = apache_request_headers();
 
     if (isset($headers['authorization'])) {
         $token = $headers['authorization'];
+
         try {
             if ($user = decode_jwt($token)) {
 
@@ -21,39 +23,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $json = file_get_contents('php://input');
                 // Converts it into a PHP object
                 $body = json_decode($json, true);
-                $created_at = date("Y-m-d H:i:s");
 
-                $assign_to = ($body["assign_to"] == null) ? "null" : "'{$body["assign_to"]}'";
                 $sql = "
-                INSERT INTO `tasks`
-                    (
-                        `id`,
-                        `project_id`,
-                        `name`,
-                        `description`,
-                        `state`,
-                        `assign_to`,
-                        `color`,
-                        `due_date`
-                    ) 
-                    VALUES 
-                    (
-                        uuid(),
-                        '{$_GET["project_id"]}',
-                        '{$body["name"]}',
-                        '{$body["description"]}',
-                        '{$body["state"]}',
-                        {$assign_to},
-                        '{$body["color"]}',
-                        '{$body["due_date"]}'
-                    )
+                SELECT * FROM tasks
+                WHERE 
+                    assign_to = '{$user["user"]->id}'
+                    AND
+                    state = 'in_progress'
+                ;
                 ";
 
                 $result = mysqli_query($database->getConnection(), $sql);
 
                 if ($result) {
+                    $rows = [];
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $sql_assign_to = "SELECT id,email,full_name,phone,position,bio FROM `users` WHERE id = '{$row['assign_to']}';";
+
+                        $result_assign_to = mysqli_query($database->getConnection(), $sql_assign_to);
+                        $row["assign_to"] = mysqli_fetch_assoc($result_assign_to);
+                        $rows[] = $row;
+                    }
                     $return["status"] = true;
-                    $return["message"] = "Create Task Successfully";
+                    $return["data"] = $rows;
                 } else {
                     $return["status"] = false;
                     $return["message"] = mysqli_error($database->getConnection());
@@ -63,8 +55,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $return["message"] = "Token incorrect";
             }
         } catch (Throwable $err) {
+
             $return["status"] = false;
-            $return["message"] = "Token incorrect";
+            $return["message"] = "have something error";
         }
     } else {
         $return["status"] = false;

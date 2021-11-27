@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         `user_id`
                     ) 
                     VALUES 
-                    ".implode(",",$value_sql_project_user).";
+                    " . implode(",", $value_sql_project_user) . ";
                 ";
 
                 $result = mysqli_query($database->getConnection(), $sql_invite_user);
@@ -83,7 +83,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $return["message"] = "Token Not Found";
     }
 } else {
-    $return["status"] = "Method not allow";
+    $return["status"] = false;
+    $return["message"] = "Method not allow";
 }
 
 echo json_encode($return);

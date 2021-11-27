@@ -47,7 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
         $return["message"] = "Token Not Found";
     }
 } else {
-    $return["status"] = "Method not allow";
+    $return["status"] = false;
+    $return["message"] = "Method not allow";
 }
 
 echo json_encode($return);

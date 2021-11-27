@@ -47,3 +47,11 @@ authorization:{{token}}
 DELETE {{endpoint}}/api_kanban_board/service/tasks/delete_task.php?id={{task_id}}
 Content-Type: application/json
 authorization:{{token}}
+
+
+### 
+
+//Get Task in progress
+GET {{endpoint}}/api_kanban_board/service/tasks/task_in_progress.php
+Content-Type: application/json
+authorization:{{token}}

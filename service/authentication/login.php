@@ -64,7 +64,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $return["message"] = "have something error";
     }
 } else {
-    $return["status"] = "Method not allow";
+    $return["status"] = false;
+    $return["message"] = "Method not allow";
 }
 
 

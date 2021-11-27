@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $body = json_decode($json, true);
                 $created_at = date("Y-m-d H:i:s");
 
-        
+
                 $sql = "
                 INSERT INTO `comments`
                     (
@@ -64,7 +64,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $return["message"] = "Token Not Found";
     }
 } else {
-    $return["status"] = "Method not allow";
+    $return["status"] = false;
+    $return["message"] = "Method not allow";
 }
 
 echo json_encode($return);
