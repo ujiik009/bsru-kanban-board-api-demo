@@ -10,7 +10,7 @@
 
 จากนั้น ให้ทำการสร้าง ไฟล์ ชื่อ `index.vue` ภายใต้ `src/components/ProjectList`
 
-![](<../../.gitbook/assets/image (146).png>)
+![](<../../.gitbook/assets/image (146) (1).png>)
 
 ทำการ Register component กับ `vue-router` ให้ทำการเปิด ไฟล์ `main.js` ภายใต้ `src/` และทำการ copy code ชุดนี้ไปแทนที่
 

@@ -54,7 +54,7 @@ vue create .
 
 ![](<.gitbook/assets/image (11).png>)
 
-![](<.gitbook/assets/image (128).png>)
+![](<.gitbook/assets/image (128) (1).png>)
 
 ![](<.gitbook/assets/image (9).png>)
 
@@ -72,6 +72,6 @@ npm run serve
 
 จากนั้นทำการเปิด web browser โดยเข้าไปที่ URL : [http://localhost:8080/](http://localhost:8080)
 
-![](<.gitbook/assets/image (144).png>)
+![](<.gitbook/assets/image (144) (1).png>)
 
 Github : [https://github.com/ujiik009/bsru-kanban-board/tree/a0e67dede20be42ea367905fe1286432264902cd](https://github.com/ujiik009/bsru-kanban-board/tree/a0e67dede20be42ea367905fe1286432264902cd)

@@ -29,7 +29,7 @@
 
 และทำการสร้าง Folder ที่ชื่อว่า `api_kanban_board`
 
-![](<../.gitbook/assets/image (147).png>)
+![](<../.gitbook/assets/image (147) (1).png>)
 
 จากนั้นทำการ คลิกขวา เลือก `open with code`
 

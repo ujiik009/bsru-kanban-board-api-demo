@@ -4,7 +4,7 @@
 
 1.1 ทำการเปิดไฟล์ index.vue ภายใต้ src/components/AccountSetting
 
-![](<../.gitbook/assets/image (161).png>)
+![](<../.gitbook/assets/image (161) (1).png>)
 
 จากนั้นทำการ copy code ด้านล่างมาแทนที่
 
@@ -333,7 +333,7 @@ export default {
 
 2.1 ทำการเปิดไฟล์ index.vue ภายใต้ src/components/AccountSetting
 
-![](<../.gitbook/assets/image (161).png>)
+![](<../.gitbook/assets/image (161) (1).png>)
 
 จากนั้นทำการ copy code ด้านล่างมาแทนที่
 
